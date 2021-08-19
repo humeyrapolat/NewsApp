@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_navigation"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.humeyrapolat.newsapp.view.NewsFragment"
+        android:label="News">
+
+        <action
+            android:id="@+id/action_newsFragment_to_newDetailFragment2"
+            app:destination="@id/newDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newDetailFragment"
+        android:name="com.humeyrapolat.newsapp.view.NewDetailFragment"
+        android:label="">
+        <argument
+            android:name="newsItem"
+            app:argType="com.humeyrapolat.newsapp.model.News"
+            app:nullable="true" />
+    </fragment>
+</navigation>

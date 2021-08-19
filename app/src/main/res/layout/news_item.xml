@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="news"
+            type="com.humeyrapolat.newsapp.model.News" />
+
+        <variable
+            name="listener"
+            type="com.humeyrapolat.newsapp.adapter.NewsClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:elevation="50dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="@{(view) -> listener.onNewsClicked(news,view)}"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="25dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/newsUuid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(news.id)}"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:downloadUrl="@{news.image}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintCircleRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.886"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_title"
+                android:layout_width="189dp"
+                android:layout_height="120dp"
+                android:layout_margin="5dp"
+                android:fontFamily="serif"
+                android:gravity="left"
+                android:text="@{news.title}"
+                android:textAllCaps="true"
+                android:textColor="#424949"
+                android:textSize="18dp"
+                app:layout_constraintBottom_toBottomOf="@+id/item_image"
+                app:layout_constraintEnd_toStartOf="@+id/item_image"
+                app:layout_constraintHorizontal_bias="0.347"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/item_image" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

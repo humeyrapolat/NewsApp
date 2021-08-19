@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="selectedNews"
+            type="com.humeyrapolat.newsapp.model.News" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/white"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
+              >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:scaleType="centerCrop"
+                    android:downloadUrl="@{selectedNews.image}"
+                    />
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".view.NewDetailFragment">
+
+                <TextView
+                    android:id="@+id/new_detail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="@{selectedNews.title}"
+                    android:textAllCaps="true"
+                    android:textColor="#424949"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/new_detail_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:fontFamily="serif"
+                    android:text="@{selectedNews.description}"
+                    android:textColor="#424949"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/new_detail_auth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="serif"
+                    android:text="@{selectedNews.author}"
+                    android:textColor="#424949"
+                    android:textSize="12sp" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="11dp">
+
+
+                    <TextView
+                        android:id="@+id/textvieww"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:fontFamily="serif"
+                        android:text="News categories:  "
+                        android:textColor="#424949"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/new_detail_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="start"
+                        android:layout_toEndOf="@+id/textvieww"
+                        android:layout_toRightOf="@+id/textvieww"
+                        android:fontFamily="serif"
+                        android:text="@{String.valueOf(selectedNews.category)}"
+                        android:textColor="#424949"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="@+id/textvieww"
+                        app:layout_constraintStart_toStartOf="@+id/textvieww"
+                        app:layout_constraintTop_toBottomOf="@+id/textvieww" />
+
+
+                </RelativeLayout>
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

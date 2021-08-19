@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".view.NewsFragment">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="serif"
+            android:text="TODAY NEWS"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_fragment_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/news_item"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
