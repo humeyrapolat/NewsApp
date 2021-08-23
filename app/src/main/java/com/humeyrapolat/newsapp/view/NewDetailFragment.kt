@@ -38,12 +38,16 @@ class NewDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         viewModel = ViewModelProviders.of(this).get(NewDetailViewModel::class.java)
+
 
         arguments?.let {
             viewModel.newLiveData.value = it.getSerializable("newsItem") as News
             dataBinding.selectedNews =viewModel.newLiveData.value
         }
+
+
     }
 
 }

@@ -27,7 +27,6 @@ class NewsAdapter(var newsList: ArrayList<News>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        //val view = inflater.inflate(R.layout.news_item, parent, false)
         val view = DataBindingUtil.inflate<NewsItemBinding>(
             inflater, R.layout.news_item,
             parent, false
