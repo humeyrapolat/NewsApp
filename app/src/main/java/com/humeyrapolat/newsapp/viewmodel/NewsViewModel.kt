@@ -43,7 +43,6 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
         launch {
             val news = NewsDatabase(getApplication()).newsDao().getAllNews()
             displayNews(news)
-            Toast.makeText(getApplication(), "News From SQLite", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -55,7 +54,6 @@ class NewsViewModel(application: Application) : BaseViewModel(application) {
                 .subscribeWith(object : DisposableSingleObserver<APIResponse>() {
                     override fun onSuccess(t: APIResponse) {
                         storeSQLite(t.news!!)
-                        Toast.makeText(getApplication(), "News From API", Toast.LENGTH_LONG).show()
                     }
 
                     override fun onError(e: Throwable) {

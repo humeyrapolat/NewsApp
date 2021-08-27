@@ -24,7 +24,4 @@ class NewsAPIService {
         .build()
         .create(NewsAPI::class.java)
 
-
-
-
 }

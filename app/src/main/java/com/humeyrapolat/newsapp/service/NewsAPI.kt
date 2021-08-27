@@ -24,6 +24,6 @@ interface NewsAPI {
     //Single = internetttei veriyi bir defa ve garanti şekilde  almamız gerektiğinde kullanırız
     fun getNews(
         @Query("apiKey") apiKey: String = "6FWO--Wyx1HNfr6Xxq8Hj0sR3TOV15zarudC3YwxWWK5s83q",
-        @Query("language") language: String = "tr"
+        @Query("language") language: String = "fr"
     ): Single<APIResponse>
 }
