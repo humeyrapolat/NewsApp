@@ -11,9 +11,15 @@ Extensions -> KTX, Glide,
 Navigation                                                                                                                                                                         
 RxJava 2                                                                                                                                                                            Live Data & Data Binding 
 
-# Link
+# How to build on your enviroment
+Add your API key in Constant file.
+get api key --> https://currentsapi.services/en
 
-https://currentsapi.services/en
+const val API_KEY = "your_api_key"
+
+ fun getNews(
+        @Query("apiKey") apiKey: String = "your_api_key"
+    ): Single<APIResponse>
 
 # Images
 ![1](https://user-images.githubusercontent.com/71139790/131098590-2f95f3a2-46cb-419d-95d0-c854d7823dcd.png)
