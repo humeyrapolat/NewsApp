@@ -23,7 +23,7 @@ interface NewsAPI {
     // Observeble = internetteki verileri devamlı şekilde güncellememiz ve almamız gerektiğinde kullanırız
     //Single = internetttei veriyi bir defa ve garanti şekilde  almamız gerektiğinde kullanırız
     fun getNews(
-        @Query("apiKey") apiKey: String = "6FWO--Wyx1HNfr6Xxq8Hj0sR3TOV15zarudC3YwxWWK5s83q",
-        @Query("language") language: String = "fr"
+        @Query("apiKey") apiKey: String = "your_api_key",
+        @Query("language") language: String = "tr"
     ): Single<APIResponse>
 }
